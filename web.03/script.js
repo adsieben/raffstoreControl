@@ -1,5 +1,6 @@
 ﻿//TheFreeElectron 2015, http://www.instructables.com/member/TheFreeElectron/
 //JavaScript, uses pictures as buttons, sends and receives values to/from the Rpi
+
 //These are all the buttons
 // var button_0 = document.getElementById("button_0");
 // var button_1 = document.getElementById("button_1");
@@ -23,7 +24,7 @@
 // var button_19 = document.getElementById("button_19");
 // var button_20 = document.getElementById("button_20");
 // var button_21 = document.getElementById("button_21");
-//
+
 // //Create an array for easy access later
 // var Buttons = [ button_0, button_1, button_2, button_3, button_4, button_5,
 //     button_6, button_7, button_8, button_9, button_10, button_11, button_12,
