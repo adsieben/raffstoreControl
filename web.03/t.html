@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<style>
+#myContainer {
+  width: 400px;
+  height: 400px;
+  position: relative;
+  background: yellow;
+}
+#myAnimation {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  background-color: red;
+}
+</style>
+<body>
+
+<p>
+<button onclick="myMove()">Click Me</button> 
+<button id="hh" onclick="myMove2()">Click Me2</button> 
+</p>
+
+<div id ="myContainer">
+<div id ="myAnimation"></div>
+</div>
+
+<script>
+var id = null;
+var id2 = null;
+function myMove() {
+  var elem = document.getElementById("myAnimation"); 
+  var pos = 0;
+  elem.innerHTML=' '+pos;
+  clearInterval(id);
+  id = setInterval(frame,10);
+  function frame() {
+    if (pos == 350) {
+      clearInterval(id);
+    } else {
+      pos++; 
+      elem.style.top = pos + 'px'; 
+      elem.style.left = pos + 'px'; 
+    }
+  }
+}
+function myMove2() {
+  var elem = document.getElementById("myAnimation");   
+  var elem2 = document.getElementById("hh");   
+  var pos = 0,ppos;
+  pos=getPositionX(elem);
+  ppos=getPositionY(elem);
+  elem2.innerHTML=' '+pos;
+  clearInterval(id);
+  id = setInterval(frame, 10);
+  function frame() {
+    if ( (pos >= 350) || (ppos<=0)  ) {
+      clearInterval(id);
+    } else {
+      pos++;ppos--; 
+      elem2.innerHTML=' '+pos+ppos;
+      elem.style.top = pos + 'px'; 
+      elem.style.left = ppos + 'px'; 
+    }
+  }
+}
+            function getPositionX(element) {
+                var rect = element.getBoundingClientRect();
+                return rect.x;
+            }
+            function getPositionY(element) {
+                var rect = element.getBoundingClientRect();
+                return rect.y;
+            }
+ 
+</script>
+
+</body>
+</html>
